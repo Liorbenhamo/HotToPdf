@@ -17,6 +17,7 @@ function App() {
   const [apps, setApps] = useState("");
   const [appsPrice, setAppsPrice] = useState("");
   const [exdate, setExdate] = useState("");
+  const [customerNum, setCustomerNum] = useState("");
 
   const downloadPDF = () =>{
     const capture = document.querySelector('.actual-receipt');
@@ -89,13 +90,21 @@ function App() {
   </div>
 
   <div className="colored-row first">
-    <span> דרכי תשלום</span>
+    <span>פרטי סוכן</span>
     
   </div>
 
   <div className="data-row">
-    <span className="font-weight">אשראי</span>
-    <span>************{creditcardfournum}</span>
+    <span className="font-weight">שם</span>
+    <span>ליאור</span>
+  </div>
+  <div className="data-row">
+    <span className="font-weight">מספר טלפון</span>
+    <span>0528922034</span>
+  </div>
+  <div className="data-row">
+    <span className="font-weight">מספר עובד</span>
+    <span>543855</span>
   </div>
 
   <div className="colored-row">
@@ -103,7 +112,7 @@ function App() {
   </div>
 
   <div className="data-row">
-    <span className="font-weight"> תשלום חודשי מובטח לשנה</span>
+    <span className="font-weight">  תשלום חודשי ממוצע לשנה כולל חודשי ניסיון</span>
     <span>
       ₪
       {' '}
@@ -119,6 +128,22 @@ function App() {
   <div className="data-row border-bottom">
     <span>
       <span className="font-weight">
+       213
+      </span>
+      {' '}
+    </span>
+    <span>
+      <span className="font-weight">
+      חבילת טריפל
+        {' '}
+
+      </span>
+      {' '}
+    </span>
+  </div>
+  <div className="data-row border-bottom">
+    <span>
+      <span className="font-weight">
        מחיר הטבה
       </span>
       {' '}
@@ -126,7 +151,7 @@ function App() {
     </span>
     <span>
       <span className="font-weight">
-      כמות ממירים
+      כמות סטרימרים
         {' '}
 
       </span>
@@ -135,6 +160,42 @@ function App() {
     </span>
   </div>
 
+  <div className="data-row border-bottom">
+    <span>
+      <span className="font-weight">
+        מחיר
+        {' '}
+       
+      </span>
+      {' '}
+    פטור
+    </span>
+    <span>
+      <span className="font-weight">
+      כמות אפליקציות
+      </span>
+      {' '}
+      {apps}
+    </span>
+  </div>
+  <div className="data-row border-bottom">
+    <span>
+      <span className="font-weight">
+        מחיר
+        {' '}
+       
+      </span>
+      {' '}
+    פטור
+    </span>
+    <span>
+      <span className="font-weight">
+      שלטים חכמים
+      </span>
+      {' '}
+      
+    </span>
+  </div>
   <div className="data-row border-bottom">
     <span>
       <span className="font-weight">
@@ -156,20 +217,56 @@ function App() {
   <div className="data-row border-bottom">
     <span>
       <span className="font-weight">
-       מחיר
+        מחיר
         {' '}
+        
       </span>
       {' '}
-     {appsPrice}
+    פטור
     </span>
     <span>
       <span className="font-weight">
-        כמות אפליקציות
+     מחיר התקנה
+      </span>
+      {' '}
+     
+    </span>
+  </div>
+  <div className="data-row border-bottom">
+    <span>
+      <span className="font-weight">
+        כלול הטבה
+        {' '}
+        
+      </span>
+      {' '}
+    
+    </span>
+    <span>
+      <span className="font-weight">
+      טלפון ביתי
+      </span>
+      {' '}
+     
+    </span>
+  </div>
+  <div className="data-row border-bottom">
+    <span>
+      <span className="font-weight">
+       פטור
+        {' '}
+      </span>
+      {' '}
+     
+    </span>
+    <span>
+      <span className="font-weight">
+        catch up
         {' '}
        
       </span>
       {' '}
-     {apps}
+     
     </span>
   </div>
   <div className="data-row2 border-bottom">
@@ -203,6 +300,10 @@ function App() {
     </button> 
   </div>
 </div>
+    <div className='whatsapp'>
+    <input onChange={(e)=>setCustomerNum(e.target.value)} type="text" />
+    <a target="_blank" href={`https://wa.me/+972${customerNum}`}>whatsapp</a>
+    </div>
 
 </div>
     </div>

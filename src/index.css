@@ -156,3 +156,7 @@
       width: 100%;
   }
 }
+.whatsapp{
+  display: flex;
+  justify-content: center;
+}
