@@ -7,15 +7,14 @@ function App() {
 
   const [loader, setLoader] = useState(false);
   const [customerHome, setCustomerHome] = useState("");
-  const [creditcardfournum, setCreditCardFourNum] = useState("");
-  const [monthprice, setMonthPrice] = useState("");
+  const [install, setInstall] = useState(0);
   const [seasson, setSeasson] = useState("");
   const [memir, setMemir] = useState("");
   const [memirPrice, setMemirPrice] = useState("");
   const [channels, setChannels] = useState("");
   const [channelsPrice, setChannelsPrice] = useState("");
   const [apps, setApps] = useState("");
-  const [appsPrice, setAppsPrice] = useState("");
+  const [firstMonths, setFirstMonths] = useState("");
   const [exdate, setExdate] = useState("");
   const [customerNum, setCustomerNum] = useState("");
 
@@ -37,15 +36,14 @@ function App() {
     <div className="wrapper">
       <div className="receipt-box">
         <input type="text" placeholder='כתובת' onChange={(e)=>setCustomerHome(e.target.value)}/>
-        <input type="text" placeholder='ארבע ספרות אחרונות' onChange={(e)=>setCreditCardFourNum(e.target.value)}/>
-        <input type="text" placeholder='מחיר חודשי' onChange={(e)=>setMonthPrice(e.target.value)}/>
+        <input type="text" placeholder="התקנה" onChange={(e)=>setInstall(e.target.value)}/>
         <input type="text" placeholder='עונה' onChange={(e)=>setSeasson(e.target.value)}/>
-        <input type="text" placeholder='כמות ממרים' onChange={(e)=>setMemir(e.target.value)}/>
-        <input type="text" placeholder='מחיר כולל ממירים' onChange={(e)=>setMemirPrice(e.target.value)}/>
+        <input type="text" placeholder='כמות סטרימרים' onChange={(e)=>setMemir(e.target.value)}/>
+        <input type="text" placeholder='מחיר כולל סטרימרים' onChange={(e)=>setMemirPrice(e.target.value)}/>
         <input type="text" placeholder='ערוצים ' onChange={(e)=>setChannels(e.target.value)}/>
         <input type="text" placeholder='מחיר ערוצים' onChange={(e)=>setChannelsPrice(e.target.value)}/>
         <input type="text" placeholder='אםליקציות' onChange={(e)=>setApps(e.target.value)}/>
-        <input type="text" placeholder='מחיר כולל אפליקציות' onChange={(e)=>setAppsPrice(e.target.value)}/>
+        <input type="text" placeholder="מחיר חודשיים ראשונים(לחודש)" onChange={(e)=>setFirstMonths(e.target.value)}/>
         <input type="text" placeholder='תאריך תפוגה של ההצעה' onChange={(e)=>setExdate(e.target.value)}/>
 
 {/* actual receipt */}
@@ -76,7 +74,6 @@ function App() {
         liorbenhamo159@gmail.com
       </a>
     </p>
-    <p>0528922034</p>
         
     {/* <p>
       <a
@@ -112,11 +109,12 @@ function App() {
   </div>
 
   <div className="data-row">
-    <span className="font-weight">  תשלום חודשי ממוצע לשנה כולל חודשי ניסיון</span>
+    <span className="font-weight">  תשלום חודשי ממוצע(כולל חודשי הטבה)</span>
     <span>
-      ₪
+      ₪ 
       {' '}
-      {monthprice}
+      
+      {((parseInt(install)+199+parseInt(memirPrice)+parseInt(channelsPrice))*10+2*firstMonths)/12}
     </span>
   </div>
 
@@ -128,7 +126,7 @@ function App() {
   <div className="data-row border-bottom">
     <span>
       <span className="font-weight">
-       213
+      {parseInt(install)+199}
       </span>
       {' '}
     </span>
